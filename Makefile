@@ -1,5 +1,5 @@
 CC=gcc
-SRC=src/main.c
+SRC=src/main.c src/entity.c src/components.c src/systems.c
 TARGET=top_down_shooter
 CFLAGS=-Wall -Wextra -Wconversion -Wdouble-promotion -Wno-unused-parameter -Wno-unused-function -Wno-sign-conversion
 CPPFLAGS=-I/opt/homebrew/opt/raylib/include -Iinclude
