@@ -1,4 +1,3 @@
-
 #include "ecs/components/input_component.h"
 #include "ecs/components/speed_component.h"
 #include "ecs/components/velocity_component.h"

@@ -1,14 +1,14 @@
-
-
 #include "actors/player.h"
+
 #include "camera.h"
 #include "game.h"
-
 #include "config.h"
+
 #include "ecs/components/position_component.h"
 #include "ecs/systems/input_system.h"
 #include "ecs/systems/movement_system.h"
 #include "ecs/systems/render_system.h"
+
 #include <stdlib.h>
 
 struct game *game_init()

@@ -1,4 +1,5 @@
 #include "camera.h"
+
 #include <stdlib.h>
 
 Camera2D camera_create(Vector2 position)
