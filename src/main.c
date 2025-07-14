@@ -1,38 +1,29 @@
+#include "ecs/systems/input.h"
+#include "ecs/systems/movement.h"
+#include "ecs/systems/render.h"
+#include "entities/player.h"
 #include "raylib.h"
-#include "raymath.h"
-#include "systems.h"
-#include "entity.h"
-#include "components.h"
 
 int main()
 {
 	const int screen_width = 640;
 	const int screen_height = 480;
 
-	const float speed = 200.0f;
+	const Vector2 screen_center =
+		(Vector2){ screen_width / 2.0f, screen_height / 2.0f };
+
+	const float player_speed = 200.0f;
 
 	InitWindow(screen_width, screen_height, "Top Down Shooter");
 
 	SetTargetFPS(144);
 
-	int e = create_entity();
-
-	/* Position */
-	positions[e] = Vector2Zero();
-
-	has_position[e] = true;
-
-	/* Velocity */
-	velocities[e] = Vector2Zero();
-
-	has_velocity[e] = true;
-
-	has_input[e] = true;
+	player_create(screen_center, player_speed);
 
 	while (!WindowShouldClose()) {
 		float dt = GetFrameTime();
 
-		input_system(speed);
+		input_system();
 
 		movement_system(dt, screen_width, screen_height);
 
