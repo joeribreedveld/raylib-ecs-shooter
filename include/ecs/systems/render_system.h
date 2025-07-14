@@ -1,6 +1,8 @@
 #ifndef RENDER_SYSTEM_H
 #define RENDER_SYSTEM_H
 
-void render_system();
+#include "raylib.h"
+
+void render_system(Camera2D camera);
 
 #endif

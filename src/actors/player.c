@@ -8,7 +8,7 @@
 
 #include "raymath.h"
 
-void player_create(Vector2 pos, float speed)
+int player_create(Vector2 pos, float speed)
 {
 	int p = create_entity();
 
@@ -25,4 +25,6 @@ void player_create(Vector2 pos, float speed)
 	has_speed[p] = true;
 
 	has_input[p] = true;
+
+	return p;
 }
