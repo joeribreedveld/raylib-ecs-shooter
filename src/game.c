@@ -4,6 +4,8 @@
 #include "game.h"
 #include "config.h"
 
+#include "raymath.h"
+
 #include "ecs/components/position_component.h"
 #include "ecs/systems/input_system.h"
 #include "ecs/systems/movement_system.h"
@@ -19,7 +21,7 @@ struct game *game_init()
 
 	struct game *game = malloc(sizeof(struct game));
 
-	game->player_id = player_create(screen_center(), PLAYER_SPEED);
+	game->player_id = player_create(Vector2Zero(), PLAYER_SPEED);
 	game->camera = camera_create(positions[game->player_id]);
 
 	return game;

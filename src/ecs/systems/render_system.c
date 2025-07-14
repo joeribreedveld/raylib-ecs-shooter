@@ -19,12 +19,12 @@ void render_system(Camera2D camera)
 			continue;
 		}
 
+		DrawRectangle(0, 0, 100, 100, PINK);
+
 		DrawRectangle((int)positions[i].x - (int)SPRITE_DRAW_SIZE / 2,
 			      (int)positions[i].y - (int)SPRITE_DRAW_SIZE / 2,
 			      (int)SPRITE_DRAW_SIZE, (int)SPRITE_DRAW_SIZE,
-			      WHITE);
-
-		DrawRectangle(0, 0, 100, 100, YELLOW);
+			      GREEN);
 	}
 
 	EndMode2D();
