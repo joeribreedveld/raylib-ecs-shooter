@@ -1,7 +1,9 @@
-#include "ecs/systems/input.h"
-#include "ecs/systems/movement.h"
-#include "ecs/systems/render.h"
-#include "entities/player.h"
+#include "actors/player.h"
+
+#include "ecs/systems/input_system.h"
+#include "ecs/systems/movement_system.h"
+#include "ecs/systems/render_system.h"
+
 #include "raylib.h"
 
 int main()

@@ -1,7 +1,10 @@
-#include "render.h"
-#include "ecs/components.h"
+#include "ecs/systems/render_system.h"
+#include "ecs/components/position_component.h"
 #include "ecs/entity.h"
+
 #include "config.h"
+
+#include "raylib.h"
 
 void render_system()
 {

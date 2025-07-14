@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_H
-#define MOVEMENT_H
+#ifndef MOVEMENT_SYSTEM_H
+#define MOVEMENT_SYSTEM_H
 
 void input_system();
 

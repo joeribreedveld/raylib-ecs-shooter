@@ -1,8 +1,10 @@
-#include "ecs/components.h"
-#include "input.h"
-#include "config.h"
-#include "raymath.h"
+
+#include "ecs/components/input_component.h"
+#include "ecs/components/speed_component.h"
+#include "ecs/components/velocity_component.h"
 #include "ecs/entity.h"
+
+#include "raymath.h"
 
 void input_system()
 {

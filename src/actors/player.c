@@ -1,6 +1,11 @@
-#include "player.h"
-#include "ecs/components.h"
+#include "actors/player.h"
+
+#include "ecs/components/input_component.h"
+#include "ecs/components/position_component.h"
+#include "ecs/components/speed_component.h"
+#include "ecs/components/velocity_component.h"
 #include "ecs/entity.h"
+
 #include "raymath.h"
 
 void player_create(Vector2 pos, float speed)
