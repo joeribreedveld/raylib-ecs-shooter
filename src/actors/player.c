@@ -2,6 +2,7 @@
 
 #include "ecs/components/angle_component.h"
 #include "ecs/components/input_component.h"
+#include "ecs/components/mouse_angle_component.h"
 #include "ecs/components/position_component.h"
 #include "ecs/components/speed_component.h"
 #include "ecs/components/texture_component.h"
@@ -27,6 +28,7 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_input[p] = true;
 	has_texture[p] = true;
 	has_angle[p] = true;
+	has_mouse_angle[p] = true;
 
 	return p;
 }

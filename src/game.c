@@ -8,6 +8,7 @@
 
 #include "ecs/systems/lifetime_system.h"
 #include "ecs/systems/shooting_system.h"
+#include "ecs/systems/mouse_system.h"
 #include "ecs/components/position_component.h"
 #include "ecs/systems/input_system.h"
 #include "ecs/systems/movement_system.h"
@@ -50,6 +51,8 @@ void game_loop(struct game *game)
 
 		camera_follow(&game->camera, positions[game->player_id]);
 
+		mouse_system(game->camera);
+
 		render_system(game->camera, game->player_id);
 	}
 }
@@ -57,6 +60,7 @@ void game_loop(struct game *game)
 void game_shutdown(struct game *game)
 {
 	UnloadTexture(game->player_tex);
+
 	free(game);
 
 	CloseWindow();

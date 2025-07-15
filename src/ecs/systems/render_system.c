@@ -36,16 +36,6 @@ void render_system(Camera2D camera, int player_id)
 	}
 
 	if (has_position[player_id] && has_texture[player_id]) {
-		/* TODO: Abstract into angle component and add to player */
-		Vector2 mouse_world =
-			GetScreenToWorld2D(GetMousePosition(), camera);
-
-		Vector2 player_pos = positions[player_id];
-
-		Vector2 dir = Vector2Subtract(mouse_world, player_pos);
-
-		float angle = atan2f(dir.y, dir.x) * RAD2DEG;
-
 		DrawTexturePro(textures[player_id],
 			       (Rectangle){ 0, 0, textures[player_id].width,
 					    textures[player_id].height },
@@ -55,7 +45,7 @@ void render_system(Camera2D camera, int player_id)
 					    textures[player_id].height },
 			       (Vector2){ textures[player_id].width / 2.0f,
 					  textures[player_id].height / 2.0f },
-			       angle, WHITE);
+			       angles[player_id], WHITE);
 	}
 
 	EndMode2D();
