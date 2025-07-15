@@ -5,14 +5,12 @@
 #include "ecs/entity.h"
 
 #include "raylib.h"
-#include "raymath.h"
-
-#include <math.h>
 
 void render_system(Camera2D camera, int player_id)
 {
 	BeginDrawing();
 
+	/* TODO: Draw map with grass background from tileset */
 	ClearBackground(BLACK);
 
 	BeginMode2D(camera);
@@ -24,6 +22,7 @@ void render_system(Camera2D camera, int player_id)
 			continue;
 		}
 
+		/* TODO: Seperately init arguments */
 		DrawTexturePro(textures[i],
 			       (Rectangle){ 0, 0, textures[i].width,
 					    textures[i].height },
@@ -36,6 +35,7 @@ void render_system(Camera2D camera, int player_id)
 	}
 
 	if (has_position[player_id] && has_texture[player_id]) {
+		/* TODO: Seperately init arguments */
 		DrawTexturePro(textures[player_id],
 			       (Rectangle){ 0, 0, textures[player_id].width,
 					    textures[player_id].height },

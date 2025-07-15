@@ -24,9 +24,11 @@ struct game *game_init()
 
 	struct game *game = malloc(sizeof(struct game));
 
+	/* TODO: Manage textures abstract and more modular */
 	game->player_tex = LoadTexture("assets/player.png");
 	game->bullet_tex = LoadTexture("assets/bullet.png");
 
+	/* TODO: Only use player_id for camera not for ECS (from other todo) */
 	game->player_id =
 		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
 
@@ -42,17 +44,19 @@ void game_loop(struct game *game)
 
 		input_system();
 
+		/* TODO: Don't make systems depend on singular hardcoded entities */
 		shooting_system(game->player_id, game->camera,
 				game->bullet_tex);
 
 		lifetime_system(dt);
 
-		movement_system(dt, SCREEN_WIDTH, SCREEN_HEIGHT);
+		movement_system(dt);
 
 		camera_follow(&game->camera, positions[game->player_id]);
 
 		mouse_system(game->camera);
 
+		/* TODO: Render also shouldn't need single entity */
 		render_system(game->camera, game->player_id);
 	}
 }
@@ -60,6 +64,7 @@ void game_loop(struct game *game)
 void game_shutdown(struct game *game)
 {
 	UnloadTexture(game->player_tex);
+	UnloadTexture(game->bullet_tex);
 
 	free(game);
 
