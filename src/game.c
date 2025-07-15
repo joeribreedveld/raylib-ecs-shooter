@@ -6,6 +6,8 @@
 
 #include "raymath.h"
 
+#include "ecs/systems/lifetime_system.h"
+#include "ecs/systems/shooting_system.h"
 #include "ecs/components/position_component.h"
 #include "ecs/systems/input_system.h"
 #include "ecs/systems/movement_system.h"
@@ -34,11 +36,15 @@ void game_loop(struct game *game)
 
 		input_system();
 
+		shooting_system(game->player_id, game->camera);
+
+		lifetime_system(dt);
+
 		movement_system(dt, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		camera_follow(&game->camera, positions[game->player_id]);
 
-		render_system(game->camera);
+		render_system(game->camera, game->player_id);
 	}
 }
 

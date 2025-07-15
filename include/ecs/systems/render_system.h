@@ -3,6 +3,6 @@
 
 #include "raylib.h"
 
-void render_system(Camera2D camera);
+void render_system(Camera2D camera, int player_id);
 
 #endif

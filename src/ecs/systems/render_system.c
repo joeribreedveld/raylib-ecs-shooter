@@ -6,7 +6,7 @@
 
 #include "raylib.h"
 
-void render_system(Camera2D camera)
+void render_system(Camera2D camera, int player_id)
 {
 	BeginDrawing();
 
@@ -14,17 +14,24 @@ void render_system(Camera2D camera)
 
 	BeginMode2D(camera);
 
+	DrawRectangle(0, 0, 100, 100, PINK);
+
 	for (int i = 0; i < next_entity; i++) {
-		if (!has_position[i]) {
+		if (!has_position[i] || i == player_id) {
 			continue;
 		}
-
-		DrawRectangle(0, 0, 100, 100, PINK);
 
 		DrawRectangle((int)positions[i].x - (int)SPRITE_DRAW_SIZE / 2,
 			      (int)positions[i].y - (int)SPRITE_DRAW_SIZE / 2,
 			      (int)SPRITE_DRAW_SIZE, (int)SPRITE_DRAW_SIZE,
 			      GREEN);
+	}
+
+	if (has_position[player_id]) {
+		DrawRectangle(
+			(int)positions[player_id].x - (int)SPRITE_DRAW_SIZE / 2,
+			(int)positions[player_id].y - (int)SPRITE_DRAW_SIZE / 2,
+			(int)SPRITE_DRAW_SIZE, (int)SPRITE_DRAW_SIZE, WHITE);
 	}
 
 	EndMode2D();

@@ -12,4 +12,8 @@
 
 #define PLAYER_SPEED 200.0f
 
+#define BULLET_SPEED 500.0f
+#define BULLET_LIFETIME 1.0f
+#define BULLET_DAMAGE 1
+
 #endif
