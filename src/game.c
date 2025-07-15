@@ -18,7 +18,7 @@
 
 struct game *game_init()
 {
-	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Top Down Shooter");
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "ECS Shooter");
 
 	SetTargetFPS(144);
 
