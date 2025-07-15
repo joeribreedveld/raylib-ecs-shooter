@@ -23,7 +23,12 @@ struct game *game_init()
 
 	struct game *game = malloc(sizeof(struct game));
 
-	game->player_id = player_create(Vector2Zero(), PLAYER_SPEED);
+	game->player_tex = LoadTexture("assets/player.png");
+	game->bullet_tex = LoadTexture("assets/bullet.png");
+
+	game->player_id =
+		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
+
 	game->camera = camera_create(positions[game->player_id]);
 
 	return game;
@@ -36,7 +41,8 @@ void game_loop(struct game *game)
 
 		input_system();
 
-		shooting_system(game->player_id, game->camera);
+		shooting_system(game->player_id, game->camera,
+				game->bullet_tex);
 
 		lifetime_system(dt);
 
@@ -50,6 +56,7 @@ void game_loop(struct game *game)
 
 void game_shutdown(struct game *game)
 {
+	UnloadTexture(game->player_tex);
 	free(game);
 
 	CloseWindow();

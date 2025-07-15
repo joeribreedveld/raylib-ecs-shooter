@@ -3,6 +3,6 @@
 
 #include "raylib.h"
 
-int player_create(Vector2 pos, float speed);
+int player_create(Vector2 pos, float speed, Texture2D tex);
 
 #endif

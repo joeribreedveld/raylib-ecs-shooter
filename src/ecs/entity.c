@@ -27,10 +27,12 @@ void destroy_entity(int id)
 
 	positions[id] = (Vector2){ 0.0f, 0.0f };
 	velocities[id] = (Vector2){ 0.0f, 0.0f };
+
 	speeds[id] = 0.0f;
 	lifetimes[id] = 0.0f;
-	teams[id] = TEAM_NONE;
 	damages[id] = 0;
+
+	teams[id] = TEAM_NONE;
 }
 
 void reset_entities()

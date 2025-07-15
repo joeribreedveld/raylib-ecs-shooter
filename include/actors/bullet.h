@@ -6,6 +6,7 @@
 #include "ecs/components/team_component.h"
 
 int bullet_create(Vector2 pos, Vector2 dir, float speed, float lifetime,
-		  int dmg, enum team_type bullet_team);
+		  int dmg, enum team_type bullet_team, Texture2D tex,
+		  float angle);
 
 #endif

@@ -6,6 +6,8 @@
 struct game {
 	int player_id;
 	Camera2D camera;
+	Texture2D player_tex;
+	Texture2D bullet_tex;
 };
 
 struct game *game_init();

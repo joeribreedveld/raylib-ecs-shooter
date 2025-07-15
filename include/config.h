@@ -1,9 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define SPRITE_SIZE 64
-#define SPRITE_SCALE 0.25f
-#define SPRITE_DRAW_SIZE (SPRITE_SIZE * SPRITE_SCALE)
+#define TILE_SIZE 64
+#define TILE_SCALE 0.25f
+#define TILE_DRAW_SIZE (TILE_SIZE * TILE_SCALE)
+
+#define SPRITE_SCALE 0.5f
 
 #define MAX_ENTITIES 1024
 
@@ -12,7 +14,7 @@
 
 #define PLAYER_SPEED 200.0f
 
-#define BULLET_SPEED 500.0f
+#define BULLET_SPEED 750.0f
 #define BULLET_LIFETIME 1.0f
 #define BULLET_DAMAGE 1
 
