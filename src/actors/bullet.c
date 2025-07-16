@@ -16,6 +16,8 @@ int bullet_create(Vector2 pos, float speed, float lifetime, int dmg,
 
 	velocities[b] = Vector2Scale(Vector2Normalize(dir), speed);
 
+	sprite_rotation_offsets[b] = 90.0f;
+
 	positions[b] = pos;
 	teams[b] = bullet_team;
 	damages[b] = dmg;
@@ -30,6 +32,7 @@ int bullet_create(Vector2 pos, float speed, float lifetime, int dmg,
 	has_team[b] = true;
 	has_texture[b] = true;
 	has_angle[b] = true;
+	has_sprite_rotation_offset[b] = true;
 
 	return b;
 }

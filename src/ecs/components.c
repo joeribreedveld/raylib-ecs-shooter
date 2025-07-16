@@ -1,4 +1,5 @@
 #include "ecs/components.h"
+#include "config.h"
 
 Vector2 positions[MAX_ENTITIES];
 bool has_position[MAX_ENTITIES];
@@ -30,3 +31,4 @@ bool has_src_rect[MAX_ENTITIES];
 bool has_input[MAX_ENTITIES];
 bool has_mouse_angle[MAX_ENTITIES];
 bool has_shooting[MAX_ENTITIES];
+bool has_rounded_drawing[MAX_ENTITIES];

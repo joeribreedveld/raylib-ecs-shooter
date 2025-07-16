@@ -1,5 +1,6 @@
 #include "camera.h"
 
+#include <math.h>
 #include <stdlib.h>
 
 Camera2D camera_create(Vector2 position)
@@ -12,6 +13,6 @@ Camera2D camera_create(Vector2 position)
 
 void camera_follow(Camera2D *camera, Vector2 target)
 {
-	camera->target.x = (int)target.x;
-	camera->target.y = (int)target.y;
+	camera->target.x = (int)roundf(target.x);
+	camera->target.y = (int)roundf(target.y);
 }

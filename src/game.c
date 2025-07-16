@@ -28,11 +28,26 @@ struct game *game_init()
 	game->player_tex = LoadTexture("assets/player.png");
 	game->bullet_tex = LoadTexture("assets/bullet.png");
 
-	/* TODO: Only use player_id for camera not for ECS (from other todo) */
-	game->player_id =
+	int player_id =
 		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
 
-	game->camera = camera_create(positions[game->player_id]);
+	player_create((Vector2){ -300, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ -250, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ -200, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ -150, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ -100, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ -50, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 0, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 50, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 100, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 150, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 200, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 250, -200 }, PLAYER_SPEED, game->player_tex);
+	player_create((Vector2){ 300, -200 }, PLAYER_SPEED, game->player_tex);
+
+	game->camera_target = player_id;
+
+	game->camera = camera_create(positions[player_id]);
 
 	return game;
 }
@@ -44,19 +59,17 @@ void game_loop(struct game *game)
 
 		input_system();
 
-		/* TODO: Don't make systems depend on singular hardcoded entities */
 		shooting_system(game->camera, game->bullet_tex);
 
 		lifetime_system(dt);
 
 		movement_system(dt);
 
-		camera_follow(&game->camera, positions[game->player_id]);
+		camera_follow(&game->camera, positions[game->camera_target]);
 
 		mouse_system(game->camera);
 
-		/* TODO: Render also shouldn't need single entity */
-		render_system(game->camera, game->player_id);
+		render_system(game->camera);
 	}
 }
 

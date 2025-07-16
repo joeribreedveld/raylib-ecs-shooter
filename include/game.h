@@ -4,8 +4,8 @@
 #include "raylib.h"
 
 struct game {
-	int player_id;
 	Camera2D camera;
+	int camera_target;
 	Texture2D player_tex;
 	Texture2D bullet_tex;
 };

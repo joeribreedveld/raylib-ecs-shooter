@@ -4,7 +4,9 @@
 
 #include "raylib.h"
 
-void render_system(Camera2D camera, int player_id)
+#include <math.h>
+
+void render_system(Camera2D camera)
 {
 	BeginDrawing();
 
@@ -16,36 +18,31 @@ void render_system(Camera2D camera, int player_id)
 	DrawRectangle(0, 0, 100, 100, PINK);
 
 	for (int i = 0; i < next_entity; i++) {
-		if (!has_position[i] || i == player_id || !has_angle[i]) {
+		if (!has_position[i] || !has_angle[i]) {
 			continue;
 		}
 
-		float rotation = angles[i] + 90.0f;
+		float rotation = angles[i];
 
-		/* TODO: Seperately init arguments */
+		Rectangle dest = { positions[i].x, positions[i].y,
+				   textures[i].width, textures[i].height };
+
+		if (has_sprite_rotation_offset[i]) {
+			rotation += sprite_rotation_offsets[i];
+		}
+
+		if (has_rounded_drawing[i]) {
+			dest.x = (int)roundf(dest.x);
+			dest.y = (int)roundf(dest.y);
+		}
+
 		DrawTexturePro(textures[i],
 			       (Rectangle){ 0, 0, textures[i].width,
 					    textures[i].height },
-			       (Rectangle){ positions[i].x, positions[i].y,
-					    textures[i].width,
-					    textures[i].height },
+			       dest,
 			       (Vector2){ textures[i].width / 2.0f,
 					  textures[i].height / 2.0f },
 			       rotation, WHITE);
-	}
-
-	if (has_position[player_id] && has_texture[player_id]) {
-		/* TODO: Seperately init arguments */
-		DrawTexturePro(textures[player_id],
-			       (Rectangle){ 0, 0, textures[player_id].width,
-					    textures[player_id].height },
-			       (Rectangle){ (int)positions[player_id].x,
-					    (int)positions[player_id].y,
-					    textures[player_id].width,
-					    textures[player_id].height },
-			       (Vector2){ textures[player_id].width / 2.0f,
-					  textures[player_id].height / 2.0f },
-			       angles[player_id], WHITE);
 	}
 
 	EndMode2D();

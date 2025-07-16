@@ -12,8 +12,10 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	positions[p] = pos;
 	speeds[p] = speed;
 	textures[p] = tex;
-	teams[p] = TEAM_PLAYER;
+
 	angles[p] = 0.0f;
+
+	teams[p] = TEAM_PLAYER;
 
 	velocities[p] = Vector2Zero();
 
@@ -22,6 +24,7 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_speed[p] = true;
 	has_input[p] = true;
 	has_texture[p] = true;
+	has_rounded_drawing[p] = true;
 	has_team[p] = true;
 	has_shooting[p] = true;
 	has_angle[p] = true;
