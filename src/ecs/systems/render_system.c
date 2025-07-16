@@ -22,6 +22,8 @@ void render_system(Camera2D camera, int player_id)
 			continue;
 		}
 
+		float rotation = angles[i] + 90.0f;
+
 		/* TODO: Seperately init arguments */
 		DrawTexturePro(textures[i],
 			       (Rectangle){ 0, 0, textures[i].width,
@@ -31,7 +33,7 @@ void render_system(Camera2D camera, int player_id)
 					    textures[i].height },
 			       (Vector2){ textures[i].width / 2.0f,
 					  textures[i].height / 2.0f },
-			       angles[i], WHITE);
+			       rotation, WHITE);
 	}
 
 	if (has_position[player_id] && has_texture[player_id]) {

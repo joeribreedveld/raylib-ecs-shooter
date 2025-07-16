@@ -45,8 +45,7 @@ void game_loop(struct game *game)
 		input_system();
 
 		/* TODO: Don't make systems depend on singular hardcoded entities */
-		shooting_system(game->player_id, game->camera,
-				game->bullet_tex);
+		shooting_system(game->camera, game->bullet_tex);
 
 		lifetime_system(dt);
 

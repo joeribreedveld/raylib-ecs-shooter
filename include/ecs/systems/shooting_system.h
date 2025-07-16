@@ -3,6 +3,6 @@
 
 #include "raylib.h"
 
-void shooting_system(int player_id, Camera2D camera, Texture2D bullet_tex);
+void shooting_system(Camera2D camera, Texture2D bullet_tex);
 
 #endif

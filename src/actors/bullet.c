@@ -11,11 +11,14 @@
 
 #include "raymath.h"
 
-int bullet_create(Vector2 pos, Vector2 dir, float speed, float lifetime,
-		  int dmg, enum team_type bullet_team, Texture2D tex,
-		  float angle)
+int bullet_create(Vector2 pos, float speed, float lifetime, int dmg,
+		  enum team_type bullet_team, Texture2D tex, float angle)
 {
 	int b = create_entity();
+
+	float rad = angle * DEG2RAD;
+
+	Vector2 dir = { cosf(rad), sinf(rad) };
 
 	velocities[b] = Vector2Scale(Vector2Normalize(dir), speed);
 

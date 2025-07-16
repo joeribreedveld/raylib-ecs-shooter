@@ -4,7 +4,9 @@
 #include "ecs/components/input_component.h"
 #include "ecs/components/mouse_angle_component.h"
 #include "ecs/components/position_component.h"
+#include "ecs/components/shooting_component.h"
 #include "ecs/components/speed_component.h"
+#include "ecs/components/team_component.h"
 #include "ecs/components/texture_component.h"
 #include "ecs/components/velocity_component.h"
 #include "ecs/entity.h"
@@ -18,6 +20,7 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	positions[p] = pos;
 	speeds[p] = speed;
 	textures[p] = tex;
+	teams[p] = TEAM_PLAYER;
 	angles[p] = 0.0f;
 
 	velocities[p] = Vector2Zero();
@@ -27,6 +30,8 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_speed[p] = true;
 	has_input[p] = true;
 	has_texture[p] = true;
+	has_team[p] = true;
+	has_shooting[p] = true;
 	has_angle[p] = true;
 	has_mouse_angle[p] = true;
 
