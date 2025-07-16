@@ -1,11 +1,7 @@
 #include "actors/bullet.h"
 
 #include "ecs/systems/shooting_system.h"
-#include "ecs/components/angle_component.h"
-#include "ecs/components/mouse_angle_component.h"
-#include "ecs/components/position_component.h"
-#include "ecs/components/shooting_component.h"
-#include "ecs/components/team_component.h"
+#include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raymath.h"

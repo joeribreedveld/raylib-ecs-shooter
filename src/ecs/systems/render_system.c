@@ -1,7 +1,5 @@
 #include "ecs/systems/render_system.h"
-#include "ecs/components/angle_component.h"
-#include "ecs/components/position_component.h"
-#include "ecs/components/texture_component.h"
+#include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raylib.h"

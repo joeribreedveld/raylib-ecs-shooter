@@ -9,7 +9,7 @@
 #include "ecs/systems/lifetime_system.h"
 #include "ecs/systems/shooting_system.h"
 #include "ecs/systems/mouse_system.h"
-#include "ecs/components/position_component.h"
+#include "ecs/components.h"
 #include "ecs/systems/input_system.h"
 #include "ecs/systems/movement_system.h"
 #include "ecs/systems/render_system.h"

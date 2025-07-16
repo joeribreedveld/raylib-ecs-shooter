@@ -1,6 +1,4 @@
-#include "ecs/components/input_component.h"
-#include "ecs/components/speed_component.h"
-#include "ecs/components/velocity_component.h"
+#include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raymath.h"

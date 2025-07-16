@@ -1,6 +1,5 @@
 #include "ecs/systems/movement_system.h"
-#include "ecs/components/position_component.h"
-#include "ecs/components/velocity_component.h"
+#include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raymath.h"

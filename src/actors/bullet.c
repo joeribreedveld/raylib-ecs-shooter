@@ -1,12 +1,6 @@
 #include "actors/bullet.h"
 
-#include "ecs/components/angle_component.h"
-#include "ecs/components/damage_component.h"
-#include "ecs/components/lifetime_component.h"
-#include "ecs/components/position_component.h"
-#include "ecs/components/team_component.h"
-#include "ecs/components/texture_component.h"
-#include "ecs/components/velocity_component.h"
+#include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raymath.h"

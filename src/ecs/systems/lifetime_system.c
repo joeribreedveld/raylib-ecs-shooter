@@ -1,4 +1,4 @@
-#include "ecs/components/lifetime_component.h"
+#include "ecs/components.h"
 #include "ecs/systems/lifetime_system.h"
 #include "ecs/entity.h"
 
