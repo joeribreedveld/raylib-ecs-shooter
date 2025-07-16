@@ -31,19 +31,13 @@ struct game *game_init()
 	int player_id =
 		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
 
-	player_create((Vector2){ -300, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ -250, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ -200, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ -150, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ -100, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ -50, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 0, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 50, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 100, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 150, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 200, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 250, -200 }, PLAYER_SPEED, game->player_tex);
-	player_create((Vector2){ 300, -200 }, PLAYER_SPEED, game->player_tex);
+	/* TESTING: */
+	for (int i = -5; i < 5; i++) {
+		for (int j = -5; j < 5; j++) {
+			player_create((Vector2){ i * 40, j * 40 }, PLAYER_SPEED,
+				      game->player_tex);
+		}
+	}
 
 	game->camera_target = player_id;
 

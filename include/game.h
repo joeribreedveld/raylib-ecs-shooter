@@ -5,9 +5,9 @@
 
 struct game {
 	Camera2D camera;
-	int camera_target;
 	Texture2D player_tex;
 	Texture2D bullet_tex;
+	int camera_target;
 };
 
 struct game *game_init();

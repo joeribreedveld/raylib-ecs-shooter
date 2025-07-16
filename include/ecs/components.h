@@ -13,6 +13,12 @@ enum team_type {
 	TEAM_ENEMY,
 };
 
+enum layer_type {
+	LAYER_NONE = 0,
+	LAYER_BACKGROUND,
+	LAYER_FOREGROUND,
+};
+
 extern Vector2 positions[MAX_ENTITIES];
 extern bool has_position[MAX_ENTITIES];
 
@@ -37,14 +43,14 @@ extern bool has_team[MAX_ENTITIES];
 extern Texture2D textures[MAX_ENTITIES];
 extern bool has_texture[MAX_ENTITIES];
 
-extern Rectangle src_rects[MAX_ENTITIES];
-extern bool has_src_rect[MAX_ENTITIES];
-
 extern Vector2 custom_origins[MAX_ENTITIES];
 extern bool has_custom_origin[MAX_ENTITIES];
 
 extern float sprite_rotation_offsets[MAX_ENTITIES];
 extern bool has_sprite_rotation_offset[MAX_ENTITIES];
+
+extern enum layer_type layers[MAX_ENTITIES];
+extern bool has_layer[MAX_ENTITIES];
 
 extern bool has_input[MAX_ENTITIES];
 extern bool has_mouse_angle[MAX_ENTITIES];

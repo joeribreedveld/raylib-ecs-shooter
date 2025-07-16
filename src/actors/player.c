@@ -7,31 +7,32 @@
 
 int player_create(Vector2 pos, float speed, Texture2D tex)
 {
-	int p = create_entity();
+	int id = create_entity();
 
-	positions[p] = pos;
-	speeds[p] = speed;
-	textures[p] = tex;
+	positions[id] = pos;
+	speeds[id] = speed;
+	textures[id] = tex;
+	layers[id] = LAYER_FOREGROUND;
 
-	angles[p] = 0.0f;
+	angles[id] = 0.0f;
 
-	teams[p] = TEAM_PLAYER;
+	teams[id] = TEAM_PLAYER;
 
-	velocities[p] = Vector2Zero();
+	velocities[id] = Vector2Zero();
 
-	custom_origins[p] = (Vector2){ 16.0f, 21.5f };
+	custom_origins[id] = (Vector2){ 16.0f, 21.5f };
 
-	has_velocity[p] = true;
-	has_position[p] = true;
-	has_speed[p] = true;
-	has_input[p] = true;
-	has_texture[p] = true;
-	has_rounded_drawing[p] = true;
-	has_team[p] = true;
-	has_shooting[p] = true;
-	has_angle[p] = true;
-	has_mouse_angle[p] = true;
-	has_custom_origin[p] = true;
+	has_velocity[id] = true;
+	has_position[id] = true;
+	has_speed[id] = true;
+	has_input[id] = true;
+	has_texture[id] = true;
+	has_rounded_drawing[id] = true;
+	has_team[id] = true;
+	has_shooting[id] = true;
+	has_angle[id] = true;
+	has_mouse_angle[id] = true;
+	has_custom_origin[id] = true;
 
-	return p;
+	return id;
 }
