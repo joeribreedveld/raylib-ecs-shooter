@@ -19,6 +19,8 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 
 	velocities[p] = Vector2Zero();
 
+	custom_origins[p] = (Vector2){ 16.0f, 21.5f };
+
 	has_velocity[p] = true;
 	has_position[p] = true;
 	has_speed[p] = true;
@@ -29,6 +31,7 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_shooting[p] = true;
 	has_angle[p] = true;
 	has_mouse_angle[p] = true;
+	has_custom_origin[p] = true;
 
 	return p;
 }

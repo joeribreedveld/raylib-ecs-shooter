@@ -28,6 +28,12 @@ bool has_texture[MAX_ENTITIES];
 Rectangle src_rects[MAX_ENTITIES];
 bool has_src_rect[MAX_ENTITIES];
 
+Vector2 custom_origins[MAX_ENTITIES];
+bool has_custom_origin[MAX_ENTITIES];
+
+float sprite_rotation_offsets[MAX_ENTITIES];
+bool has_sprite_rotation_offset[MAX_ENTITIES];
+
 bool has_input[MAX_ENTITIES];
 bool has_mouse_angle[MAX_ENTITIES];
 bool has_shooting[MAX_ENTITIES];

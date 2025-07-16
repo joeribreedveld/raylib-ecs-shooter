@@ -40,12 +40,15 @@ extern bool has_texture[MAX_ENTITIES];
 extern Rectangle src_rects[MAX_ENTITIES];
 extern bool has_src_rect[MAX_ENTITIES];
 
-float sprite_rotation_offsets[MAX_ENTITIES];
-bool has_sprite_rotation_offset[MAX_ENTITIES];
+extern Vector2 custom_origins[MAX_ENTITIES];
+extern bool has_custom_origin[MAX_ENTITIES];
+
+extern float sprite_rotation_offsets[MAX_ENTITIES];
+extern bool has_sprite_rotation_offset[MAX_ENTITIES];
 
 extern bool has_input[MAX_ENTITIES];
 extern bool has_mouse_angle[MAX_ENTITIES];
 extern bool has_shooting[MAX_ENTITIES];
-bool has_rounded_drawing[MAX_ENTITIES];
+extern bool has_rounded_drawing[MAX_ENTITIES];
 
 #endif

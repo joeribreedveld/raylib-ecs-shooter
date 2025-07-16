@@ -27,6 +27,11 @@ void render_system(Camera2D camera)
 		Rectangle dest = { positions[i].x, positions[i].y,
 				   textures[i].width, textures[i].height };
 
+		Vector2 origin = { textures[i].width / 2.0f,
+				   textures[i].height / 2.0f };
+
+		Rectangle src = { 0, 0, textures[i].width, textures[i].height };
+
 		if (has_sprite_rotation_offset[i]) {
 			rotation += sprite_rotation_offsets[i];
 		}
@@ -36,13 +41,11 @@ void render_system(Camera2D camera)
 			dest.y = (int)roundf(dest.y);
 		}
 
-		DrawTexturePro(textures[i],
-			       (Rectangle){ 0, 0, textures[i].width,
-					    textures[i].height },
-			       dest,
-			       (Vector2){ textures[i].width / 2.0f,
-					  textures[i].height / 2.0f },
-			       rotation, WHITE);
+		if (has_custom_origin[i]) {
+			origin = custom_origins[i];
+		}
+
+		DrawTexturePro(textures[i], src, dest, origin, rotation, WHITE);
 	}
 
 	EndMode2D();

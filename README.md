@@ -4,14 +4,14 @@ In development.
 
 ## Todo
 
--   [ ] Set camera target to entity id
--   [ ] Fully clean ECS dynamic systems in game.c
--   [ ] has_facing_offset and has_round_position for optimal rendering system
--   [ ] custom_origin component for sprite rotation
+-   [x] Set camera target to entity id
+-   [x] Fully clean ECS dynamic systems in game.c
+-   [x] has_facing_offset and has_round_position for optimal rendering system
+-   [x] custom_origin component for sprite rotation
 -   [ ] Entity reusing and replacement after destruction
 -   [ ] Cleanup code looks for big functions like drawing
 -   [ ] Helper function for mouse world position (used in multiple places)
--   [ ] Test functionality with multiple player with different direction all shooting at mouse pos
+-   [x] Test functionality with multiple player with different direction all shooting at mouse pos
 
 ### Later
 
