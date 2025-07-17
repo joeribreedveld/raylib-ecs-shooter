@@ -5,7 +5,7 @@
 
 Camera2D camera_create(Vector2 position)
 {
-	return (Camera2D){ .zoom = 1.0f,
+	return (Camera2D){ .zoom = 0.8f,
 			   .offset = { GetScreenWidth() / 2.0f,
 				       GetScreenHeight() / 2.0f },
 			   .target = position };

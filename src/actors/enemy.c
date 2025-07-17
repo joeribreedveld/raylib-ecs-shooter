@@ -1,11 +1,11 @@
-#include "actors/player.h"
+#include "actors/enemy.h"
 
 #include "ecs/components.h"
 #include "ecs/entity.h"
 
 #include "raymath.h"
 
-int player_create(Vector2 pos, float speed, Texture2D tex)
+int enemy_create(Vector2 pos, float speed, Texture2D tex)
 {
 	int id = create_entity();
 
@@ -20,9 +20,9 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 
 	angles[id] = 0.0f;
 	has_angle[id] = true;
-	has_mouse_angle[id] = true;
+	/* Player angle */
 
-	teams[id] = TEAM_PLAYER;
+	teams[id] = TEAM_ENEMY;
 	has_team[id] = true;
 
 	textures[id] = tex;
@@ -32,10 +32,6 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_custom_origin[id] = true;
 
 	layers[id] = LAYER_FOREGROUND;
-
-	has_input[id] = true;
-	has_shooting[id] = true;
-	has_rounded_drawing[id] = true;
 
 	return id;
 }

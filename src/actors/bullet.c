@@ -14,31 +14,35 @@ int bullet_create(Vector2 pos, float speed, float lifetime, int dmg,
 		return -1;
 	}
 
+	positions[id] = pos;
+	has_position[id] = true;
+
 	float rad = angle * DEG2RAD;
 
 	Vector2 dir = { cosf(rad), sinf(rad) };
 
 	velocities[id] = Vector2Scale(Vector2Normalize(dir), speed);
+	has_velocity[id] = true;
+
+	angles[id] = angle;
+	has_angle[id] = true;
+
+	teams[id] = bullet_team;
+	has_team[id] = true;
+
+	damages[id] = dmg;
+	has_damage[id] = true;
+
+	lifetimes[id] = lifetime;
+	has_lifetime[id] = true;
+
+	textures[id] = tex;
+	has_texture[id] = true;
 
 	sprite_rotation_offsets[id] = 90.0f;
+	has_sprite_rotation_offset[id] = true;
 
 	layers[id] = LAYER_BACKGROUND;
-
-	positions[id] = pos;
-	teams[id] = bullet_team;
-	damages[id] = dmg;
-	lifetimes[id] = lifetime;
-	textures[id] = tex;
-	angles[id] = angle;
-
-	has_velocity[id] = true;
-	has_position[id] = true;
-	has_damage[id] = true;
-	has_lifetime[id] = true;
-	has_team[id] = true;
-	has_texture[id] = true;
-	has_angle[id] = true;
-	has_sprite_rotation_offset[id] = true;
 
 	return id;
 }

@@ -4,6 +4,8 @@
 
 #include "raylib.h"
 
+#include "map.h"
+
 void render_system(Camera2D camera)
 {
 	BeginDrawing();
@@ -13,7 +15,9 @@ void render_system(Camera2D camera)
 
 	BeginMode2D(camera);
 
-	DrawRectangle(0, 0, 100, 100, PINK);
+	map_draw();
+
+	/* DrawRectangle(0, 0, 100, 100, PINK); */
 
 	render_layer(LAYER_NONE);
 	render_layer(LAYER_BACKGROUND);

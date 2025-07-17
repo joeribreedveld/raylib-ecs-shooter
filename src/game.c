@@ -1,10 +1,10 @@
+#include "actors/enemy.h"
 #include "actors/player.h"
 
 #include "camera.h"
 #include "game.h"
+#include "map.h"
 #include "config.h"
-
-#include "raymath.h"
 
 #include "ecs/systems/lifetime_system.h"
 #include "ecs/systems/shooting_system.h"
@@ -24,20 +24,25 @@ struct game *game_init()
 
 	struct game *game = malloc(sizeof(struct game));
 
+	map_load("assets/map.json", "assets/spritesheet.png");
+
 	/* TODO: Manage textures abstract and more modular */
 	game->player_tex = LoadTexture("assets/player.png");
 	game->bullet_tex = LoadTexture("assets/bullet.png");
+	game->enemy_tex = LoadTexture("assets/enemy.png");
 
-	int player_id =
-		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
+	int player_id = player_create((Vector2){ 1024, 1024 }, PLAYER_SPEED,
+				      game->player_tex);
 
 	/* TESTING: */
-	for (int i = -5; i < 5; i++) {
+	/* for (int i = -5; i < 5; i++) {
 		for (int j = -5; j < 5; j++) {
 			player_create((Vector2){ i * 40, j * 40 }, PLAYER_SPEED,
 				      game->player_tex);
 		}
-	}
+	} */
+
+	enemy_create((Vector2){ -100, -100 }, PLAYER_SPEED, game->enemy_tex);
 
 	game->camera_target = player_id;
 

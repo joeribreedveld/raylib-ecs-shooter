@@ -6,6 +6,7 @@
 struct game {
 	Camera2D camera;
 	Texture2D player_tex;
+	Texture2D enemy_tex;
 	Texture2D bullet_tex;
 	int camera_target;
 };
