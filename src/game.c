@@ -3,7 +3,7 @@
 
 #include "camera.h"
 #include "game.h"
-#include "map.h"
+/* #include "map.h" */
 #include "config.h"
 
 #include "ecs/systems/lifetime_system.h"
@@ -16,6 +16,8 @@
 
 #include <stdlib.h>
 
+#include "raymath.h"
+
 struct game *game_init()
 {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "ECS Shooter");
@@ -24,15 +26,15 @@ struct game *game_init()
 
 	struct game *game = malloc(sizeof(struct game));
 
-	map_load("assets/map.json", "assets/spritesheet.png");
+	/* map_load("assets/map.json", "assets/spritesheet.png"); */
 
 	/* TODO: Manage textures abstract and more modular */
 	game->player_tex = LoadTexture("assets/player.png");
 	game->bullet_tex = LoadTexture("assets/bullet.png");
 	game->enemy_tex = LoadTexture("assets/enemy.png");
 
-	int player_id = player_create((Vector2){ 1024, 1024 }, PLAYER_SPEED,
-				      game->player_tex);
+	int player_id =
+		player_create(Vector2Zero(), PLAYER_SPEED, game->player_tex);
 
 	/* TESTING: */
 	/* for (int i = -5; i < 5; i++) {

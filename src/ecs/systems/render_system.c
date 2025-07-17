@@ -4,20 +4,19 @@
 
 #include "raylib.h"
 
-#include "map.h"
+/* #include "map.h" */
 
 void render_system(Camera2D camera)
 {
 	BeginDrawing();
 
-	/* TODO: Draw map with grass background from tileset */
 	ClearBackground(BLACK);
 
 	BeginMode2D(camera);
 
-	map_draw();
+	// map_draw();
 
-	/* DrawRectangle(0, 0, 100, 100, PINK); */
+	DrawRectangle(0, 0, 100, 100, PINK);
 
 	render_layer(LAYER_NONE);
 	render_layer(LAYER_BACKGROUND);
