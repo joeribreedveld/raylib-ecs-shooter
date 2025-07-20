@@ -38,5 +38,10 @@ void render_layer(enum layer_type layer)
 		}
 
 		DrawTexturePro(textures[i], src, dest, origin, rotation, WHITE);
+
+		DrawRectangleLines((int)positions[i].x - 16,
+				   (int)positions[i].y - 16,
+				   (int)TILE_DRAW_SIZE, (int)TILE_DRAW_SIZE,
+				   GREEN);
 	}
 }

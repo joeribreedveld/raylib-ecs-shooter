@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 #define TILE_SIZE 64
-#define TILE_SCALE 0.25f
+#define TILE_SCALE 0.5f
 #define TILE_DRAW_SIZE (TILE_SIZE * TILE_SCALE)
 
 #define SPRITE_SCALE 0.5f
@@ -12,7 +12,7 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
-#define PLAYER_SPEED 200.0f
+#define PLAYER_SPEED 155.0f
 
 #define BULLET_SPEED 750.0f
 #define BULLET_LIFETIME 1.0f
