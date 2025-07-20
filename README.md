@@ -4,17 +4,22 @@ In development.
 
 ## Todo
 
--   [x] Set camera target to entity id
--   [x] Fully clean ECS dynamic systems in game.c
--   [x] has_facing_offset and has_round_position for optimal rendering system
--   [x] custom_origin component for sprite rotation
--   [x] Entity reusing and replacement after destruction
--   [x] Cleanup code looks for big functions like drawing
--   [x] Helper function for mouse world position (used in multiple places)
--   [x] Test functionality with multiple player with different direction all shooting at mouse pos
+### High
 
-### Later
+-   [ ] Custom hitboxes per actor
+-   [ ] Bind restricted clamp movement only to player
+-   [ ] Bullet fire timer and cooldown
 
--   [ ] Grass tiles background
--   [x] Layer component and rendering per layer
--   [ ] Document non-obvious ECS patterns
+### Medium
+
+-   [ ] Enemy spawning
+-   [ ] Enemy AI
+-   [ ] Enemy-bullet collision
+-   [ ] Enemy-player collision
+
+### Low
+
+-   [ ] Weapon upgrades
+-   [ ] Update selection
+-   [ ] Coin system
+-   [ ] Enemy waves
