@@ -36,6 +36,7 @@ int player_create(Vector2 pos, float speed, Texture2D tex)
 	has_input[id] = true;
 	has_shooting[id] = true;
 	has_rounded_drawing[id] = true;
+	has_map_clamp[id] = true;
 
 	return id;
 }

@@ -38,3 +38,4 @@ bool has_input[MAX_ENTITIES];
 bool has_mouse_angle[MAX_ENTITIES];
 bool has_shooting[MAX_ENTITIES];
 bool has_rounded_drawing[MAX_ENTITIES];
+bool has_map_clamp[MAX_ENTITIES];

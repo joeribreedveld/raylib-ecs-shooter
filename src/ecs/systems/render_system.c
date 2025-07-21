@@ -14,10 +14,8 @@ void render_system(Camera2D camera)
 
 	map_draw();
 
-	/* DrawRectangle(0, 0, 100, 100, PINK); */
-
-	render_layer(LAYER_NONE);
 	render_layer(LAYER_BACKGROUND);
+	render_layer(LAYER_NONE);
 	render_layer(LAYER_FOREGROUND);
 
 	EndMode2D();

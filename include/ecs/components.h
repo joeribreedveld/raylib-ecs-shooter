@@ -56,5 +56,6 @@ extern bool has_input[MAX_ENTITIES];
 extern bool has_mouse_angle[MAX_ENTITIES];
 extern bool has_shooting[MAX_ENTITIES];
 extern bool has_rounded_drawing[MAX_ENTITIES];
+extern bool has_map_clamp[MAX_ENTITIES];
 
 #endif

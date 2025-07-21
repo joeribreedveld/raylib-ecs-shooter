@@ -14,9 +14,11 @@ void movement_system(float dt)
 		Vector2 min = { 16, 16 };
 		Vector2 max = { 1008, 1008 };
 
-		positions[i] = Vector2Clamp(
-			Vector2Add(positions[i],
-				   Vector2Scale(velocities[i], dt)),
-			min, max);
+		positions[i] = Vector2Add(positions[i],
+					  Vector2Scale(velocities[i], dt));
+
+		if (has_map_clamp[i]) {
+			positions[i] = Vector2Clamp(positions[i], min, max);
+		}
 	}
 }

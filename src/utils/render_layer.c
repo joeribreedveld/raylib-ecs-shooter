@@ -1,3 +1,4 @@
+#include "config.h"
 #include "ecs/components.h"
 #include "ecs/entity.h"
 #include "raylib.h"
@@ -39,8 +40,8 @@ void render_layer(enum layer_type layer)
 
 		DrawTexturePro(textures[i], src, dest, origin, rotation, WHITE);
 
-		DrawRectangleLines((int)positions[i].x - 16,
-				   (int)positions[i].y - 16,
+		DrawRectangleLines((int)dest.x - (int)TILE_DRAW_SIZE / 2,
+				   (int)dest.y - (int)TILE_DRAW_SIZE / 2,
 				   (int)TILE_DRAW_SIZE, (int)TILE_DRAW_SIZE,
 				   GREEN);
 	}

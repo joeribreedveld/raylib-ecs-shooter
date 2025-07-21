@@ -16,8 +16,6 @@
 
 #include <stdlib.h>
 
-#include "raymath.h"
-
 struct game *game_init()
 {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "ECS Shooter");
@@ -37,14 +35,6 @@ struct game *game_init()
 
 	int player_id =
 		player_create(player_pos, PLAYER_SPEED, game->player_tex);
-
-	/* TESTING: */
-	/* for (int i = -5; i < 5; i++) {
-		for (int j = -5; j < 5; j++) {
-			player_create((Vector2){ i * 40, j * 40 }, PLAYER_SPEED,
-				      game->player_tex);
-		}
-	} */
 
 	enemy_create((Vector2){ -100, -100 }, PLAYER_SPEED, game->enemy_tex);
 
